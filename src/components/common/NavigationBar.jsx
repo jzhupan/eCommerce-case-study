@@ -18,7 +18,6 @@ import { BsCart3 } from "react-icons/bs";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const NavigationBar = () => {
-  // eslint-disable-next-line react/prop-types
   const MenuItemLink = ({ icon, label, href }) => (
     <MenuItem icon={icon} as={Link} href={href}>
       {label}
@@ -45,7 +44,6 @@ const NavigationBar = () => {
           </Text>
         </Flex>
 
-        {/* Mobile View: Burger Menu */}
         <Box display={{ base: "block", md: "none" }}>
           <Menu>
             <MenuButton
