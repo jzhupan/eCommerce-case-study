@@ -4,7 +4,6 @@ import {
   HStack,
   IconButton,
   useColorModeValue,
-  Stack,
   Link,
   Text,
   Menu,
@@ -19,6 +18,7 @@ import { BsCart3 } from "react-icons/bs";
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const NavigationBar = () => {
+  // eslint-disable-next-line react/prop-types
   const MenuItemLink = ({ icon, label, href }) => (
     <MenuItem icon={icon} as={Link} href={href}>
       {label}
@@ -28,7 +28,6 @@ const NavigationBar = () => {
   return (
     <Box px={4} bg={useColorModeValue("white", "gray.900")} boxShadow={"sm"}>
       <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-        {/* Logo always visible */}
         <Flex alignItems="center">
           <img
             src={Logo}
@@ -56,25 +55,33 @@ const NavigationBar = () => {
               aria-label="Options"
             />
             <MenuList>
-              <MenuItem as={Link} href="#">
+              <MenuItem as={Link} href="/">
                 Home
               </MenuItem>
-              <MenuItem as={Link} href="#">
+              <MenuItem as={Link} href="/shop">
                 Shop
               </MenuItem>
-              <MenuItem as={Link} href="#">
+              <MenuItem as={Link} href="/about">
                 About
               </MenuItem>
-              <MenuItem as={Link} href="#">
+              <MenuItem as={Link} href="/contact">
                 Contact
               </MenuItem>
               <VStack>
-                <MenuItemLink icon={<FaRegUser />} label="Account" href="#" />
-                <MenuItemLink icon={<FaSearch />} label="Search" href="#" />
+                <MenuItemLink
+                  icon={<FaRegUser />}
+                  label="Account"
+                  href="/account"
+                />
+                <MenuItemLink
+                  icon={<FaSearch />}
+                  label="Search"
+                  href="/search"
+                />
                 <MenuItemLink
                   icon={<FaRegHeart />}
                   label="Favorites"
-                  href="#"
+                  href="/fav"
                 />
                 <MenuItemLink icon={<BsCart3 />} label="Cart" href="#" />
               </VStack>
@@ -82,19 +89,18 @@ const NavigationBar = () => {
           </Menu>
         </Box>
 
-        {/* Desktop View: Navigation Links */}
         <Flex alignItems={"center"} display={{ base: "none", md: "flex" }}>
           <HStack spacing={4} as={"nav"}>
-            <Link href="#" fontWeight="medium">
+            <Link href="/" fontWeight="medium">
               Home
             </Link>
-            <Link href="#" fontWeight="medium">
+            <Link href="/shop" fontWeight="medium">
               Shop
             </Link>
-            <Link href="#" fontWeight="medium">
+            <Link href="/about" fontWeight="medium">
               About
             </Link>
-            <Link href="#" fontWeight="medium">
+            <Link href="/contact" fontWeight="medium">
               Contact
             </Link>
           </HStack>
