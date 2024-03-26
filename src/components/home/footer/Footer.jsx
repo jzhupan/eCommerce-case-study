@@ -35,8 +35,8 @@ const Footer = () => {
           p="5"
           m="5"
         >
-          <GridItem>
-            <Text fontWeight="bold" fontSize={property.fontLg} mb={8}>
+          <GridItem width="70%">
+            <Text fontWeight="bold" fontSize={property.fontLg} mb={10}>
               Funiro.
             </Text>
             <Text mb={2} color={property.fontGrey} fontSize={property.fontMd}>
@@ -55,7 +55,7 @@ const Footer = () => {
             </Text>
             <Link
               display="block"
-              mb={4}
+              mb={10}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -63,7 +63,7 @@ const Footer = () => {
             </Link>
             <Link
               display="block"
-              mb={4}
+              mb={10}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -71,7 +71,7 @@ const Footer = () => {
             </Link>
             <Link
               display="block"
-              mb={4}
+              mb={10}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -79,7 +79,6 @@ const Footer = () => {
             </Link>
             <Link
               display="block"
-              mb={4}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -98,7 +97,7 @@ const Footer = () => {
             </Text>
             <Link
               display="block"
-              mb={4}
+              mb={10}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -106,7 +105,7 @@ const Footer = () => {
             </Link>
             <Link
               display="block"
-              mb={4}
+              mb={10}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -114,7 +113,7 @@ const Footer = () => {
             </Link>
             <Link
               display="block"
-              mb={4}
+              mb={10}
               fontSize={property.fontMd}
               fontWeight="medium"
             >
@@ -127,7 +126,7 @@ const Footer = () => {
               fontSize={property.fontMd}
               fontWeight="medium"
               color={property.fontGrey}
-              mb={8}
+              mb={10}
             >
               Newsletter
             </Text>
@@ -158,7 +157,7 @@ const Footer = () => {
         <Center>
           <Divider orientation="horizontal" width="90%" />
         </Center>
-        <Box p="5" mt="5" w="70%">
+        <Box p="2" mt="10" w="70%">
           <Text pl="10">2023 furino. All rights reverved</Text>
         </Box>
       </Box>
