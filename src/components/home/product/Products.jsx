@@ -1,14 +1,36 @@
 import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 
 const Products = () => {
+  const CircleTag = ({ label, colorScheme }) => {
+    return (
+      <Box
+        position="absolute"
+        w="48px"
+        h="48px"
+        borderRadius="50%"
+        top="5"
+        right="5"
+        bg={colorScheme}
+        color="white"
+        pt="3"
+        pl="2"
+        fontSize="16px"
+        fontWeight="regular"
+        flexWrap={"none"}
+      >
+        {label}
+      </Box>
+    );
+  };
   const products = [
     {
       id: 1,
       name: "Syltherine",
-      subtitle: "Stylish cafe chair",
+      subtitle: "Stylish cafe table",
       price: "Rp 2.500.000",
       salePrice: "Rp 3.500.000",
       image: "/src/assets/home/Product1.png",
+      tag: "30%",
     },
     {
       id: 2,
@@ -21,50 +43,55 @@ const Products = () => {
     {
       id: 3,
       name: "Lolito",
-      subtitle: "Stylish cafe chair",
-      price: "Rp 2.500.000",
+      subtitle: "Luxury large sofa",
+      price: "Rp 7.000.000",
       salePrice: "Rp 3.500.000",
       image: "/src/assets/home/Product3.png",
+      tag: "50%",
     },
     {
       id: 4,
       name: "Respira",
-      subtitle: "Stylish cafe chair",
-      price: "Rp 2.500.000",
+      subtitle: "Outdoor bar table and stool",
+      price: "Rp 500.000",
       salePrice: "Rp 3.500.000",
       image: "/src/assets/home/Product4.png",
+      tag: "New",
     },
     {
       id: 5,
       name: "Grifo",
-      subtitle: "Stylish cafe chair",
-      price: "Rp 2.500.000",
-      salePrice: "Rp 3.500.000",
+      subtitle: "Night lamp",
+      price: "Rp 1.500.000",
+      salePrice: "Rp 1.500.000",
       image: "/src/assets/home/Product5.png",
     },
     {
       id: 6,
       name: "Muggo",
-      subtitle: "Stylish cafe chair",
-      price: "Rp 2.500.000",
-      salePrice: "Rp 3.500.000",
+      subtitle: "Small mug",
+      price: "Rp 150.000",
+      salePrice: "Rp 150.000",
       image: "/src/assets/home/Product6.png",
+      tag: "New",
     },
     {
       id: 7,
       name: "Pingky",
-      subtitle: "Stylish cafe chair",
-      price: "Rp 2.500.000",
+      subtitle: "Cute bed set ",
+      price: "Rp 7.000.000",
       salePrice: "Rp 3.500.000",
       image: "/src/assets/home/Product7.png",
+      tag: "50%",
     },
     {
       id: 8,
       name: "Potty",
-      subtitle: "Stylish cafe chair",
-      price: "Rp 2.500.000",
+      subtitle: "Minimalist flower pot",
+      price: "Rp 500.000",
       salePrice: "Rp 3.500.000",
       image: "/src/assets/home/Product8.png",
+      tag: "New",
     },
   ];
 
@@ -98,6 +125,12 @@ const Products = () => {
                   w="100%"
                   h="100%"
                 />
+                {product.tag && (
+                  <CircleTag
+                    label={product.tag}
+                    colorScheme={product.tag === "New" ? "teal.500" : "red.500"}
+                  />
+                )}
               </Box>
               <Box pl={3}>
                 <Text
@@ -125,15 +158,28 @@ const Products = () => {
               </Box>
             </GridItem>
           ))}
+        </Grid>
+        <Box
+          w="100%"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          padding="5"
+          margin="3"
+        >
           <Button
+            width="20%"
             borderRadius="none"
             bg="none"
             color="brand.primaryColor"
             outline={property.buttonOutline}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
           >
             Show more
           </Button>
-        </Grid>
+        </Box>
       </Box>
     </>
   );
