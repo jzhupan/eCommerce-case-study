@@ -1,6 +1,7 @@
 import { Box, Button, Grid, GridItem, Image, Text } from "@chakra-ui/react";
 
 const Products = () => {
+  // eslint-disable-next-line react/prop-types
   const CircleTag = ({ label, colorScheme }) => {
     return (
       <Box
@@ -45,7 +46,7 @@ const Products = () => {
       name: "Lolito",
       subtitle: "Luxury large sofa",
       price: "Rp 7.000.000",
-      salePrice: "Rp 3.500.000",
+      salePrice: "Rp 14.000.000",
       image: "/src/assets/home/Product3.png",
       tag: "50%",
     },
@@ -80,7 +81,7 @@ const Products = () => {
       name: "Pingky",
       subtitle: "Cute bed set ",
       price: "Rp 7.000.000",
-      salePrice: "Rp 3.500.000",
+      salePrice: "Rp 14.000.000",
       image: "/src/assets/home/Product7.png",
       tag: "50%",
     },
@@ -107,16 +108,18 @@ const Products = () => {
 
   return (
     <>
-      <Box justifyContent="center" padding="5%">
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        w="full"
+        h="full"
+        padding="5%"
+      >
         <Grid templateColumns="repeat(4, 1fr)" gap={6}>
           {products.map((product) => (
-            <GridItem
-              key={product.id}
-              w="285px"
-              h="446px"
-              bg="gray.50"
-              //   boxShadow="md"
-            >
+            <GridItem key={product.id} w="285px" h="446px" bg="gray.50">
               <Box maxW="285px" h="301px" position="relative" mb={4}>
                 <Image
                   src={product.image}
@@ -154,21 +157,33 @@ const Products = () => {
                   fontSize={property.mdSize}
                 >
                   {product.price}
+                  {product.tag &&
+                    product.tag !== "New" &&
+                    product.salePrice && (
+                      <Text
+                        as="s"
+                        color="gray.400"
+                        fontWeight={property.fontWSm}
+                        fontSize={property.smSize}
+                        pl="5"
+                      >
+                        {product.salePrice}
+                      </Text>
+                    )}
                 </Text>
               </Box>
             </GridItem>
           ))}
         </Grid>
         <Box
-          w="100%"
-          display="flex"
+          display="inline-flex"
           alignItems="center"
           justifyContent="center"
           padding="5"
           margin="3"
         >
           <Button
-            width="20%"
+            width="245px"
             borderRadius="none"
             bg="none"
             color="brand.primaryColor"

@@ -48,14 +48,15 @@ const BrowseRange = () => {
           <Text
             fontFamily="body"
             fontSize="16px"
-            fontWeight="semiBold"
+            fontWeight="regular"
             color={property.textFillColor}
             textAlign="center"
             textShadow="
-            -1px -1px 0 #000,  
-            1px -1px 0 #000,
-            -1px  1px 0 #000,
-            1px  1px 0 #000"
+          -1px -1px 0 #000,  
+          1px -1px 0 #000,
+          -1px  1px 0 #000,
+          1px  1px 0 #000,
+          1px 4px 6px rgba(0,0,0,0.5)"
           >
             {property.subtitle}
           </Text>

@@ -1,4 +1,4 @@
-import { Container, Box, Button, Text, GridItem, Grid } from "@chakra-ui/react";
+import { Box, Button, Text, GridItem, Grid } from "@chakra-ui/react";
 import ProductHomeImg from "../../../assets/home/home page bg.png";
 
 const PromotionHome = () => {
@@ -15,85 +15,108 @@ const PromotionHome = () => {
     };
 
     return (
-      <Box
-        maxW={property.width}
-        height={property.height}
-        borderWidth="1px"
-        borderRadius="lg"
-        overflow="hidden"
-        backgroundColor={property.bgColor}
-      >
-        <Box p="6" m="6">
-          <Box display="flex" alignItems="baseline" width="100%">
-            <Text
-              fontFamily="body"
-              fontSize="16px"
-              fontWeight="semiBold"
-              color="fontBlack"
-            >
-              {property.subtitle}
-            </Text>
-          </Box>
-
-          <Box
-            fontFamily="heading"
-            fontWeight="bold"
-            fontSize="52px"
-            color="brand.primaryColor"
-            width="80%"
-          >
-            {property.title}
-          </Box>
-
-          <Box>
-            <Box
-              as="span"
-              color="fontBlack"
-              fontWeight="medium"
-              fontSize="18px"
-            >
-              {property.description}
-            </Box>
-          </Box>
-
-          <Box display="flex" mt="2" alignItems="center">
-            <Button
-              bgColor="brand.primaryColor"
-              fontFamily="brand.body"
-              fontWeight="bold"
-              fontSize="16px"
-              color="white"
-              borderRadius="none"
-              mt="8"
-              padding="8"
-              width="40%"
-            >
-              {property.buttonInfo}
-            </Button>
-          </Box>
-        </Box>
-      </Box>
-    );
-  }
-  return (
-    <div>
-      <Container maxW="1440px">
+      <>
         <Box
-          height="716.83px"
-          width="100%"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          w="full"
+          h="full"
+          padding="5%"
           backgroundImage={ProductHomeImg}
           backgroundPosition="center"
           backgroundRepeat="no-repeat"
           backgroundSize="cover"
         >
-          <Grid h="100%" templateColumns="repeat(5, 1fr)" gap={4}>
-            <GridItem pr="10" area={"main"}>
-              {PromoInfo()}
-            </GridItem>
-          </Grid>
+          <Box
+            maxW={property.width}
+            height={property.height}
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            backgroundColor={property.bgColor}
+          >
+            <Box p="6" m="6">
+              <Box display="flex" alignItems="baseline" width="100%">
+                <Text
+                  fontFamily="body"
+                  fontSize="16px"
+                  fontWeight="semiBold"
+                  color="fontBlack"
+                >
+                  {property.subtitle}
+                </Text>
+              </Box>
+
+              <Box
+                fontFamily="heading"
+                fontWeight="bold"
+                fontSize="52px"
+                color="brand.primaryColor"
+                width="80%"
+              >
+                {property.title}
+              </Box>
+
+              <Box>
+                <Box
+                  as="span"
+                  color="fontBlack"
+                  fontWeight="medium"
+                  fontSize="18px"
+                >
+                  {property.description}
+                </Box>
+              </Box>
+
+              <Box display="flex" mt="2" alignItems="center">
+                <Button
+                  bgColor="brand.primaryColor"
+                  fontFamily="brand.body"
+                  fontWeight="bold"
+                  fontSize="16px"
+                  color="white"
+                  borderRadius="none"
+                  mt="8"
+                  padding="8"
+                  width="40%"
+                >
+                  {property.buttonInfo}
+                </Button>
+              </Box>
+            </Box>
+          </Box>
         </Box>
-      </Container>
-    </div>
+      </>
+    );
+  }
+  return (
+    // <div>
+    //   <Box
+    //     display="flex"
+    //     flexDirection="column"
+    //     alignItems="center"
+    //     justifyContent="center"
+    //     w="full"
+    //     h="full"
+    //     padding="5%"
+    //   >
+    //     <Box
+    //       backgroundImage={ProductHomeImg}
+    //       backgroundPosition="center"
+    //       backgroundRepeat="no-repeat"
+    //       backgroundSize="cover"
+    //     >
+    //       <Grid h="100%" templateColumns="repeat(5, 1fr)" gap={4}>
+    //         <GridItem pr="10" area={"main"}>
+    //           {PromoInfo()}
+    //         </GridItem>
+    //       </Grid>
+    //     </Box>
+    //   </Box>
+    // </div>
+    <> {PromoInfo()}</>
   );
 };
 
